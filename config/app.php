@@ -162,13 +162,16 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        //Laravel Passport for Api Authetication
-        Laravel\Passport\PassportServiceProvider::class,
 
 
         /*
          * Package Service Providers...
          */
+
+        //Laravel Passport for Api Authetication
+        Laravel\Passport\PassportServiceProvider::class,
+        //Media Library
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
 
         //
 
