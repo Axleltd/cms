@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Spatie\Fractalistic\Fractal;
+use Axle\Transformers\UserTransformer;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +17,12 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+Route::get('/users',function(){
+
+	$users = \App\User::all();
+
+	return Fractal::create()
+	   ->collection($users)
+	   ->transformWith(new UserTransformer())
+	   ->toArray();
+});
