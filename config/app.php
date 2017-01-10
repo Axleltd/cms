@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'CMS',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,12 +163,17 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
 
-        //
-
+        //Laravel Passport for Api Authetication
+        Laravel\Passport\PassportServiceProvider::class,
+        //Media Library
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        //Fractal For Data Normalization
+        Spatie\Fractal\FractalServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -225,6 +230,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //Fractal
+        'Fractal' => Spatie\Fractal\FractalFacade::class,
 
     ],
 
