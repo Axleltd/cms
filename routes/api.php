@@ -18,5 +18,9 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/pages',function(Request $request){
-    return $request->user();
+    $pages = \App\Page::all();
+    return \Spatie\Fractalistic\Fractal::create()
+        ->collection($pages)
+        ->transformWith(new \Axle\Transformers\PageTransformer())
+        ->toArray();
 });

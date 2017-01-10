@@ -7,6 +7,10 @@ use App\Page;
 class PageTransformer extends Fractal\TransformerAbstract
 {
 
+    protected $availableIncludes = [
+      'posts'
+    ];
+
     public function transform(Page $page)
     {
         return [
