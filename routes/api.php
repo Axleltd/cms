@@ -17,6 +17,14 @@ use Axle\Transformers\UserTransformer;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/pages',function(Request $request){
+    $pages = \App\Page::all();
+    return \Spatie\Fractalistic\Fractal::create()
+        ->collection($pages)
+        ->transformWith(new \Axle\Transformers\PageTransformer())
+        ->toArray();
+
 Route::get('/users',function(){
 
 	$users = \App\User::all();
@@ -25,4 +33,5 @@ Route::get('/users',function(){
 	   ->collection($users)
 	   ->transformWith(new UserTransformer())
 	   ->toArray();
+
 });
