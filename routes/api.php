@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Spatie\Fractalistic\Fractal;
+use Axle\Transformers\UserTransformer;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,4 +24,14 @@ Route::get('/pages',function(Request $request){
         ->collection($pages)
         ->transformWith(new \Axle\Transformers\PageTransformer())
         ->toArray();
+
+Route::get('/users',function(){
+
+	$users = \App\User::all();
+
+	return Fractal::create()
+	   ->collection($users)
+	   ->transformWith(new UserTransformer())
+	   ->toArray();
+
 });

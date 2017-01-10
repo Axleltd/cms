@@ -8,7 +8,8 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "laravel/passport": "^1.0",
-        "spatie/laravel-medialibrary": "^4.10"
+        "spatie/laravel-medialibrary": "^4.10",
+        "spatie/laravel-fractal": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -23,7 +24,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Axle\\" :"Axle\\"
+            "Axle\\": "Axle/"
         }
     },
     "autoload-dev": {

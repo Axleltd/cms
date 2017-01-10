@@ -172,9 +172,8 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         //Media Library
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-
-        //
-
+        //Fractal For Data Normalization
+        Spatie\Fractal\FractalServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -231,6 +230,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //Fractal
+        'Fractal' => Spatie\Fractal\FractalFacade::class,
 
     ],
 
