@@ -4,11 +4,12 @@ namespace Axle\Transformers;
 
 use League\Fractal;
 use App\Page;
+
 class PageTransformer extends Fractal\TransformerAbstract
 {
-
-    protected $availableIncludes = [
-      'posts'
+    //protected $availableIncludes;
+    protected $availableIncludes= [
+      'posts','media'
     ];
 
     public function transform(Page $page)
@@ -16,20 +17,22 @@ class PageTransformer extends Fractal\TransformerAbstract
         return [
             'id' => (int) $page->id,
             'title' => $page->title,
-            'descriptions' => $page->descriptions,
+            'description' => $page->description,
             'links' => [
                 'rel' => 'self',
                 'url' => 'api/v1/pages?id='.$page->id
             ],
-            'posts' => [
-                'title' => 'Blah Blah Blah',
-                'description' => 'test test test',
-                'links' => [
-                    'rel' => 'blank',
-                    'url' => 'api/v1/posts?id='.$page->id
-                ]
-            ]
         ];
+    }
+
+    public function includePosts(Page $page)
+    {
+        return $this->collection($page->posts, new PostTransformer());
+    }
+
+    public function includeMedia(Page $page)
+    {
+        return $this->collection($page->media, new GalleryTransformer());
     }
 }
 

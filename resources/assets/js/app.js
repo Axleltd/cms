@@ -19,6 +19,7 @@ Vue.http.interceptors.push((request, next) => {
     next();
 });
 
+Vue.component('upload', require('./components/Upload.vue'));
 Vue.component('example', require('./components/Example.vue'));
 
 Vue.component(

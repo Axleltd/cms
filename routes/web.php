@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('callback', function (Illuminate\Http\Request $request) {
+/*
+ * OAUTH Token Callback
+ * Route::get('callback', function (Illuminate\Http\Request $request) {
     $http = new GuzzleHttp\Client;
 
     $response = $http->post('/oauth/token', [
@@ -33,8 +36,19 @@ Route::get('callback', function (Illuminate\Http\Request $request) {
     ]);
 
     return json_decode((string) $response->getBody(), true);
-});
+});*/
 
+Route::get('/test',function(){
+	return view('upload');
+});
+Route::post('upload',function(Request $request){
+	$page = \App\Page::findOrFail(1);
+	
+	if($page->addMediaFromRequest('image')->toCollection('images')){
+		return redirect('/');
+	}
+	//echo "HEL";
+});
 Route::get('/admin',function(){
 	return view('admin.passport');
 });

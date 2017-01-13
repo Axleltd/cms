@@ -31,3 +31,15 @@ $factory->define(App\Page::class, function (Faker\Generator $faker) {
 
     ];
 });
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->text([150]),
+        'slug' => $faker->slug(10),
+        'description' => $faker->paragraphs([3]),
+        'published_on' => \Carbon\Carbon::now(),
+        'status' => 1,
+        'page_id' => random_int(1,6)
+
+    ];
+});
