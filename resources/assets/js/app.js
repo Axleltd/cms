@@ -5,7 +5,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import VueRouter from 'vue-router';
 require('./bootstrap');
+
+Vue.use(VueRouter);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -19,10 +22,8 @@ Vue.http.interceptors.push((request, next) => {
     next();
 });
 
-Vue.component('upload', require('./components/Upload.vue'));
-Vue.component('example', require('./components/Example.vue'));
 
-Vue.component(
+const passport =Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
 );
@@ -37,6 +38,16 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+const router = new VueRouter({
+    routes: [
+        // dynamic segments start with a colon
+        { path: '/example', component: Vue.component('example', require('./components/Example.vue')) },
+        { path: '/upload', component: Vue.component('upload', require('./components/Upload.vue'))},
+        { path: '/passport', component: passport}
+    ]
+
+})
+//Router Mounted
 const app = new Vue({
-    el: '#app'
-});
+    router
+}).$mount('#app');
