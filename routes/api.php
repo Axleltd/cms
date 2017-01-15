@@ -31,21 +31,28 @@ Route::get('/posts/{id}','PostController@show');
 //Calendar
 Route::get('/calendars','CalendarController@index');
 Route::get('/calendars/{id}','CalendarController@show');
+
 //Resource
 Route::get('/resources','ResourceController@index');
 Route::get('/resources/{id}','ResourceController@show');
-//Staff
 
+//Staff
 Route::get('/staffs','StaffController@index');
 Route::get('/staffs/{id}','StaffController@show');
-//Student
 
+
+//Student
 Route::get('/students','StudentController@index');
 Route::get('/students/{id}','StudentController@show');
-//Gallery
 
+//Gallery
 Route::get('/galleries','GalleryController@index');
 Route::get('/galleries/{id}','GalleryController@show');
+
 //News
 Route::get('/news','NewsController@index');
 Route::get('/news/{id}','NewsController@show');
+
+//News
+Route::get('/courses','CourseController@index');
+Route::get('/courses/{id}','CourseController@show');
