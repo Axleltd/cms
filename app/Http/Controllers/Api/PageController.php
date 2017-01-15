@@ -8,7 +8,7 @@ class PageController extends ApiController
 {
     public function index()
     {
-        return $this->getCollection(Page::with('posts')->get(), new PageTransformer())
+        return $this->getCollection(Page::with('posts')->get(), new PageTransformer());
     }
 
     public function show($id)
