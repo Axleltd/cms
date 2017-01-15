@@ -8,19 +8,12 @@ class PageController extends ApiController
 {
     public function index()
     {
-        return $this->initManager()->createData(
-                    $this->collection(Page::with('posts')->get(), new PageTransformer())
-                )->toArray();
-
+        return $this->getCollection(Page::with('posts')->get(), new PageTransformer());
     }
 
     public function show($id)
     {
-
-        return $this->fractal
-            ->item(Page::findOrFail($id), new PageTransformer())
-            ->toArray();
-
+        return $this->getItem(Page::findOrFail($id), new PageTransformer());
     }
 
 

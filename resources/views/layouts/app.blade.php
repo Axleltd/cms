@@ -48,6 +48,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li><router-link to="/upload">Upload</router-link></li>
+                        <li><router-link to="/passport">Passport</router-link></li>
+                        <li><router-link to="/example">Example</router-link></li>
+
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>

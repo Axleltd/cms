@@ -174,6 +174,11 @@ return [
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         //Fractal For Data Normalization
         Spatie\Fractal\FractalServiceProvider::class,
+
+        //Social Media Authentications
+
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -231,8 +236,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        //Fractal
+        //Fractal for API
         'Fractal' => Spatie\Fractal\FractalFacade::class,
+        //Socialite for Social Media Login
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
     ],
 

@@ -27,4 +27,17 @@ class ApiController extends Controller
     {
     	return new Collection($model, $transformer);
     }
+
+    public function getCollection($model, TransformerAbstract $transformer)
+    {
+    	return $this->initManager()->createData(
+                    $this->collection($model, $transformer)
+                )->toArray();
+    }
+    public function getItem($model, TransformerAbstract $transformer)
+    {
+    	return $this->initManager()->createData(
+                    $this->item($model, $transformer)
+                )->toArray();
+    }
 }

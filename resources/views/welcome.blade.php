@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="row">
-            <upload></upload>
+           <router-view></router-view>
         </div>
     </div>
 @stop
