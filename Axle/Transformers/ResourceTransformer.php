@@ -8,7 +8,7 @@ use App\Resource;
 use League\Fractal;
 
 
-class StaffTransformer extends Fractal\TransformerAbstract
+class ResourceTransformer extends Fractal\TransformerAbstract
 {
     //protected $availableIncludes;
     protected $availableIncludes= [

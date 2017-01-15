@@ -8,7 +8,7 @@ use App\Student;
 use League\Fractal;
 
 
-class StaffTransformer extends Fractal\TransformerAbstract
+class StudentTransformer extends Fractal\TransformerAbstract
 {
     //protected $availableIncludes;
     protected $availableIncludes= [
