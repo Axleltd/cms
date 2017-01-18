@@ -19,7 +19,6 @@ class CreateMessagesTable extends Migration
             $table->text('content');
             $table->boolean('status');
             $table->string('type');
-
             $table->timestamps();
         });
     }

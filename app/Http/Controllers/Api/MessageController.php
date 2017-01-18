@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers\Api;
 
-use App\Message;
-use Axle\Transformers\MessageTransformer;
+use App\Model\Message;
+use App\Transformers\MessageTransformer;
 
 class MessageController extends ApiController
 {

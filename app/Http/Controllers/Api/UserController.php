@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 
-use App\User;
-use Axle\Transformers\UserTransformer;
+use App\Model\User;
+use App\Transformers\UserTransformer;
 use Spatie\Fractalistic\Fractal;
 
 class UserController

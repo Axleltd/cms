@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Api;
 
 
-use Axle\Transformers\GalleryTransformer;
+use App\Transformers\GalleryTransformer;
 use Spatie\MediaLibrary\Media;
 
 class GalleryController extends ApiController

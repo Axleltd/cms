@@ -1,16 +1,14 @@
 <?php
 namespace App\Http\Controllers\Api;
 
-
-
-use App\Staff;
-use Axle\Transformers\StaffTransformer;
+use App\Model\Staff;
+use App\Transformers\StaffTransformer;
 
 class StaffController extends ApiController
 {
     public function index()
     {
-        return $this->getCollection(Staff::all(),new StaffTransformer());
+        return $this->getCollection(Staff::all(), new StaffTransformer());
     }
 
     public function show($id)

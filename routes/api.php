@@ -28,9 +28,6 @@ Route::get('/pages/{id}','PageController@show');
 Route::get('/posts','PostController@index');
 Route::get('/posts/{id}','PostController@show');
 
-//Calendar
-Route::get('/calendars','CalendarController@index');
-Route::get('/calendars/{id}','CalendarController@show');
 
 //Resource
 Route::get('/resources','ResourceController@index');
@@ -39,7 +36,6 @@ Route::get('/resources/{id}','ResourceController@show');
 //Staff
 Route::get('/staffs','StaffController@index');
 Route::get('/staffs/{id}','StaffController@show');
-
 
 //Student
 Route::get('/students','StudentController@index');
@@ -56,3 +52,7 @@ Route::get('/news/{id}','NewsController@show');
 //News
 Route::get('/courses','CourseController@index');
 Route::get('/courses/{id}','CourseController@show');
+
+//Program
+Route::get('/programs','ProgramController@index');
+Route::get('/programs/{id}','ProgramController@show');

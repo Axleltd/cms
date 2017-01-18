@@ -2,8 +2,8 @@
 namespace App\Http\Controllers\Api;
 
 
-use App\News;
-use Axle\Transformers\NewsTransformer;
+use App\Model\News;
+use App\Transformers\NewsTransformer;
 
 class NewsController extends ApiController
 {
