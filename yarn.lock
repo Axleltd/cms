@@ -3661,21 +3661,21 @@ source-map-url@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
 
-source-map@0.4.x, source-map@~0.4.1:
+source-map@0.4.x, source-map@0.X, source-map@~0.4.1:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
     amdefine ">=0.0.4"
-
-source-map@0.X, source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
 source-map@^0.1.38:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
     amdefine ">=0.0.4"
+
+source-map@^0.5.1, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
 sparkles@^1.0.0:
   version "1.0.0"
@@ -4141,6 +4141,12 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-core-image-upload@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vue-core-image-upload/-/vue-core-image-upload-2.0.2.tgz#8e4d808b37855459849c7f5be7bf87c304909fec"
+  dependencies:
+    vue "^2.0.5"
+
 vue-hot-reload-api@^2.0.1:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.7.tgz#45bd46cfeee7fd22550b467a76fa0c4a0ceae51b"
@@ -4167,6 +4173,10 @@ vue-resource@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
 
+vue-spinner@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-spinner/-/vue-spinner-1.0.2.tgz#682e84c26494a43d045ada1ff2a95a29d4080880"
+
 vue-style-loader@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-1.0.0.tgz#abeb7bd0f46313083741244d3079d4f14449e049"
@@ -4184,7 +4194,7 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.4.2.tgz#0bc595cda68fc27779568926fcead13553a335df"
 
-vue@^2.0.1:
+vue@^2.0.1, vue@^2.0.5:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.8.tgz#ae30aa86024fccf5535292ce414e7b4c221a1756"
 

@@ -1,37 +1,39 @@
 <?php
 namespace App\Http\Controllers\Api;
 
-use App\Model\Post;
-use App\Transformers\PostTransformer;
 
-class PostController extends ApiController
+
+use App\Model\Program;
+use App\Transformers\ProgramTransformer;
+
+class ProgramController extends ApiController
 {
     public function index()
     {
-        return $this->getCollection(Post::all(), new PostTransformer());
+        return $this->getCollection(Program::all(), new ProgramTransformer());
     }
 
     public function show($id)
     {
-        return $this->getItem(Post::findOrFail($id), new PostTransformer());
+        return $this->getItem(Program::findOrFail($id), new ProgramTransformer());
     }
 
 
     public function store(Request $request)
     {
-        $event = Post::create([
+        $event = Program::create([
             $this->data($request)
         ]);
     }
 
     public function update($id, Request $request)
     {
-        Post::findOrFail($id)->update($this->data($request));
+        Program::findOrFail($id)->update($this->data($request));
     }
 
     public function destroy($id)
     {
-        Post::findOrFail($id)->delete();
+        Program::findOrFail($id)->delete();
     }
 
     protected function data(Request $request)

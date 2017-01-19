@@ -8,9 +8,9 @@ use App\Model\User;
 class UserTransformer extends Fractal\TransformerAbstract
 {
 
-    /*	protected $availableIncludes = [
-            'posts'
-        ];*/
+    protected $availableIncludes = [
+            'posts','media'
+        ];
 
     public function transform(User $user)
     {
@@ -25,7 +25,14 @@ class UserTransformer extends Fractal\TransformerAbstract
         ];
     }
 
-    public function includePost(User $user)
+
+    public function includeMedia(User $user)
     {
+        return $this->collection($user->media, new GalleryTransformer());
+    }
+
+    public function includePosts(User $user)
+    {
+        return $this->collection($user->posts, new StaffTransformer());
     }
 }

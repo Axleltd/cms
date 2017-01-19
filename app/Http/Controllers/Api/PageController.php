@@ -14,19 +14,21 @@ class PageController extends ApiController
 
     public function show($id)
     {
-        if($page = $this->getItem(Page::findOrFail($id), new PageTransformer()))
+        if($page = Page::find($id))
         {
-            return $page;
+            return $this->getItem($page, new PageTransformer());
         }
-        return $this->respondWithError('Page Not found');
+        return $this->respondNotFound('Page Not found');
     }
 
 
     public function store(Request $request)
     {
-        $event = Page::create([
-            $this->data($request)
-        ]);
+        if($event = Page::create($this->data($request))){
+            $this->respond(
+                'Page Created Sucessfully'
+            );
+        }
     }
 
     public function update($id, Request $request)

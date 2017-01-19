@@ -6,6 +6,7 @@
  */
 
 import VueRouter from 'vue-router';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 require('./bootstrap');
 
 Vue.use(VueRouter);
@@ -18,7 +19,6 @@ Vue.use(VueRouter);
 
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
-
     next();
 });
 
@@ -43,11 +43,17 @@ const router = new VueRouter({
         // dynamic segments start with a colon
         { path: '/example', component: Vue.component('example', require('./components/Example.vue')) },
         { path: '/upload', component: Vue.component('upload', require('./components/Upload.vue'))},
-        { path: '/passport', component: passport}
-    ]
+        { path: '/passport', component: passport},
+
+    ],
+    components: {
+        'PulseLoader': PulseLoader
+    }
 
 })
 //Router Mounted
 const app = new Vue({
-    router
+    router,
+
+
 }).$mount('#app');

@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->boolean('status')->default(false);
             $table->dateTime('published_on');
             $table->unsignedInteger('page_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
         });
     }
